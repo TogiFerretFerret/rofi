@@ -8,12 +8,13 @@
 
 /*****----- Configuration -----*****/
 configuration {
-    modi:                       "drun,run,filebrowser,window";
+    modi:                       "drun,run,filebrowser,window,calc";
     show-icons:                 true;
     display-drun:               "APPS";
     display-run:                "RUN";
     display-filebrowser:        "FILES";
     display-window:             "WINDOW";
+	display-calc:               "CALC";
     drun-display-format:        "{name}";
     window-format:              "{w} · {c} · {t}";
     sort:                       true;
