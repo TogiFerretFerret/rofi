@@ -1,0 +1,105 @@
+* {
+  font: "JetBrainsMono Nerd Font 10";
+  bg: #0f0f16eb;
+  bg-card: #1a1a24;
+  bg-hover: #2a2a38;
+  fg: #e1e2e9;
+  dim: #606878;
+  accent: #61afef;
+  border-col: #2a2a38;
+
+  background-color: transparent;
+  text-color: @fg;
+  margin: 0; padding: 0; spacing: 0;
+}
+
+window {
+  transparency: "real";
+  location: center;
+  anchor: center;
+  width: 900px;
+  background-color: @bg;
+  border: 2px;
+  border-color: @border-col;
+  border-radius: 20px;
+}
+
+mainbox {
+  background-color: transparent;
+  children: [ "inputbar", "listview" ];
+}
+
+inputbar {
+  padding: 16px 20px;
+  children: [ "textbox-prompt-colon", "entry" ];
+  background-color: #0f0f16e0;
+  border-radius: 20px 20px 0 0;
+  border: 0 0 1px 0;
+  border-color: @border-col;
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: "  Wallpaper";
+  font: "JetBrainsMono Nerd Font Bold 12";
+  background-color: inherit;
+  text-color: @accent;
+}
+
+entry {
+  background-color: inherit;
+  text-color: @fg;
+  cursor: text;
+  placeholder: "search...";
+  placeholder-color: @dim;
+}
+
+listview {
+  padding: 16px;
+  lines: 2;
+  columns: 5;
+  scrollbar: false;
+  fixed-height: true;
+  spacing: 12px;
+  layout: vertical;
+}
+
+element {
+  padding: 8px;
+  border-radius: 14px;
+  background-color: @bg-card;
+  orientation: vertical;
+}
+
+element selected {
+  background-color: @bg-hover;
+  border: 2px;
+  border-color: @accent;
+}
+
+element-icon {
+  size: 140px;
+  border-radius: 10px;
+  background-color: transparent;
+  horizontal-align: 0.5;
+}
+
+element-text {
+  horizontal-align: 0.5;
+  padding: 6px 4px 2px 4px;
+  text-color: inherit;
+  background-color: transparent;
+  font: "JetBrainsMono Nerd Font 9";
+}
+
+element normal.normal element-text {
+  text-color: @dim;
+}
+
+element selected.normal element-text {
+  text-color: @fg;
+}
+
+scrollbar {
+  handle-width: 0px;
+}
