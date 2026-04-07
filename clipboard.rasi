@@ -1,15 +1,15 @@
 * {
-  font:   "JetBrainsMono Nerd Font 12";
-  bg0     : rgba(15, 15, 22, 0.88);
-  bg1     : rgba(15, 15, 22, 0.92);
-  bg2     : rgba(255, 255, 255, 0.04);
-  bg3     : rgba(255, 255, 255, 0.08);
+  font:   "JetBrainsMono Nerd Font 10";
+  bg0     : #0f0f16e0;
+  bg1     : #0f0f16eb;
+  bg2     : #1a1a24;
+  bg3     : #2a2a38;
   fg0     : #e1e2e9;
-  fg1     : rgba(225, 226, 233, 0.7);
-  fg2     : rgba(225, 226, 233, 0.4);
-  accent  : #a3c9ff;
+  fg1     : #a9b1c6;
+  fg2     : #606878;
+  accent  : #61afef;
   urgent  : #f38ba8;
-  border0 : rgba(255, 255, 255, 0.08);
+  selected-bg : #183A43;
 
   background-color : transparent;
   text-color       : @fg0;
@@ -24,78 +24,102 @@ element-icon, element-text, scrollbar {
 }
 
 window {
+  transparency:  "real";
   location : center;
   anchor: center;
-  width    : 1000px;
-  x-offset : 4px;
-  y-offset : 26px;
+  width    : 650px;
+  x-offset : 0px;
+  y-offset : 0px;
 
   background-color: @bg1;
-  border: 1px;
-  border-color: @border0;
+  border: 2px;
+  border-color: @bg3;
   border-radius: 16px;
 }
 
-inputbar {
-  spacing  : 8px;
-  padding  : 8px 12px;
-  children : [ icon-search, entry ];
+mainbox {
+  background-color: transparent;
+  spacing: 0px;
+  children: [ "inputbar", "message", "listview" ];
+}
 
+inputbar {
+  spacing  : 10px;
+  padding  : 16px 18px;
+  children : [ "textbox-prompt-colon", "entry" ];
   background-color: @bg0;
   border-radius: 16px 16px 0 0;
+  border: 0 0 1px 0;
+  border-color: @bg3;
 }
 
-icon-search, entry, element-icon, element-text {
-  vertical-align: 0.5;
-}
-
-icon-search {
-  expand   : false;
-  filename : "search-symbolic";
-  size     : 14px;
+textbox-prompt-colon {
+  expand: false;
+  str: "  Clipboard";
+  font: "JetBrainsMono Nerd Font Bold 11";
+  background-color: inherit;
+  text-color: @accent;
 }
 
 entry {
-  placeholder       : "Search clipboard...";
-  placeholder-color : @fg2;
+  background-color: inherit;
+  text-color: @fg0;
+  cursor: text;
+  placeholder: "filter...";
+  placeholder-color: @fg2;
+}
+
+message {
+  background-color: @bg2;
+  padding: 6px 18px;
+  border: 0 0 1px 0;
+  border-color: @bg3;
 }
 
 textbox {
-  padding          : 4px 8px;
-  background-color : @bg2;
+  background-color: inherit;
+  text-color: @fg2;
+  font: "JetBrainsMono Nerd Font 9";
 }
 
 listview {
-  padding      : 6px 0px;
-  lines        : 12;
-  columns      : 1;
+  padding      : 6px;
+  lines        : 8;
+  columns      : 2;
   scrollbar    : true;
-  fixed-height : false;
+  fixed-height : true;
   dynamic      : true;
+  spacing      : 4px;
 }
 
 element {
-  padding : 8px 12px;
+  padding : 12px 14px;
   spacing : 8px;
-  border-radius: 8px;
-  margin: 2px 6px;
+  border-radius: 10px;
+  orientation: vertical;
 }
 
-element normal urgent {
+element normal.normal,
+element alternate.normal {
+  background-color: @bg2;
+  text-color: @fg1;
+}
+
+element selected.normal {
+  background-color: @selected-bg;
+  text-color: @fg0;
+  border: 1px;
+  border-color: @accent;
+}
+
+element normal urgent,
+element alternate urgent {
   text-color: @urgent;
 }
 
-element normal active {
-  text-color: @accent;
-}
-
+element normal active,
 element alternate active {
   text-color: @accent;
-}
-
-element selected {
-  text-color       : @bg1;
-  background-color : @accent;
 }
 
 element selected urgent {
@@ -103,15 +127,18 @@ element selected urgent {
 }
 
 element-icon {
-  size: 0.8em;
+  size: 0em;
 }
 
 element-text {
   text-color: inherit;
+  background-color: transparent;
+  vertical-align: 0.0;
+  horizontal-align: 0.0;
 }
 
 scrollbar {
-  handle-width : 4px;
+  handle-width : 3px;
   handle-color : @fg2;
-  padding      : 0 4px;
+  padding      : 4px 4px;
 }
