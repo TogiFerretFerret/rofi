@@ -1,21 +1,15 @@
 * {
-  font:   "Iosevka Nerd Font Medium 11";//illegal font->defaults to nice clean arial
-  bg0     : #1a1b26;
-  bg1     : #1f2335;
-  bg2     : #24283b;
-  bg3     : #414868;
-  fg0     : #c0caf5;
-  fg1     : #a9b1d6;
-  fg2     : #737aa2;
-  red     : #61afef;
-  green   : #9ece6a;
-  yellow  : #e0af68;
-  blue    : #7aa2f7;
-  magenta : #9a7ecc;
-  cyan    : #4abaaf;
-
-  accent: @red;
-  urgent: @yellow;
+  font:   "JetBrainsMono Nerd Font 12";
+  bg0     : rgba(15, 15, 22, 0.88);
+  bg1     : rgba(15, 15, 22, 0.92);
+  bg2     : rgba(255, 255, 255, 0.04);
+  bg3     : rgba(255, 255, 255, 0.08);
+  fg0     : #e1e2e9;
+  fg1     : rgba(225, 226, 233, 0.7);
+  fg2     : rgba(225, 226, 233, 0.4);
+  accent  : #a3c9ff;
+  urgent  : #f38ba8;
+  border0 : rgba(255, 255, 255, 0.08);
 
   background-color : transparent;
   text-color       : @fg0;
@@ -38,16 +32,17 @@ window {
 
   background-color: @bg1;
   border: 1px;
-  border-color: @bg3;
-  border-radius: 6px;
+  border-color: @border0;
+  border-radius: 16px;
 }
 
 inputbar {
   spacing  : 8px;
-  padding  : 4px 8px;
+  padding  : 8px 12px;
   children : [ icon-search, entry ];
 
   background-color: @bg0;
+  border-radius: 16px 16px 0 0;
 }
 
 icon-search, entry, element-icon, element-text {
@@ -60,13 +55,18 @@ icon-search {
   size     : 14px;
 }
 
+entry {
+  placeholder       : "Search clipboard...";
+  placeholder-color : @fg2;
+}
+
 textbox {
   padding          : 4px 8px;
   background-color : @bg2;
 }
 
 listview {
-  padding      : 4px 0px;
+  padding      : 6px 0px;
   lines        : 12;
   columns      : 1;
   scrollbar    : true;
@@ -75,8 +75,10 @@ listview {
 }
 
 element {
-  padding : 4px 8px;
+  padding : 8px 12px;
   spacing : 8px;
+  border-radius: 8px;
+  margin: 2px 6px;
 }
 
 element normal urgent {
