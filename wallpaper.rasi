@@ -1,11 +1,11 @@
 * {
   font: "JetBrainsMono Nerd Font 10";
-  bg: #0f0f16eb;
+  bg: #0f1418eb;
   bg-card: #1a1a24;
   bg-hover: #2a2a38;
   fg: #e1e2e9;
   dim: #606878;
-  accent: #61afef;
+  accent: #2bb0f6;
   border-col: #2a2a38;
 
   background-color: transparent;
@@ -40,7 +40,7 @@ inputbar {
 
 textbox-prompt-colon {
   expand: false;
-  str: "  Wallpaper";
+  str: " Wallpaper  ";
   font: "JetBrainsMono Nerd Font Bold 12";
   background-color: inherit;
   text-color: @accent;
