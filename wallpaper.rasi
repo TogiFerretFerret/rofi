@@ -1,11 +1,11 @@
 * {
   font: "JetBrainsMono Nerd Font 10";
-  bg: #111418eb;
+  bg: #111319eb;
   bg-card: #1a1a24;
   bg-hover: #2a2a38;
   fg: #e1e2e9;
   dim: #606878;
-  accent: #5093e3;
+  accent: #7198fb;
   border-col: #2a2a38;
 
   background-color: transparent;
